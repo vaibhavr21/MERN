@@ -1,0 +1,25 @@
+
+Node Files
+node fileName.js 
+
+make script.js file 
+//script.js
+
+let n = 5;
+for (let i = 0; i < n; i++){
+    console.log("hello, ",i);
+}
+console.log("bye");
+
+if we want to see the output of this code 
+open terminal go to folder and simply write
+node script.js
+
+//output
+hello,  0
+hello,  1
+hello,  2
+hello,  3
+hello,  4
+bye
+
