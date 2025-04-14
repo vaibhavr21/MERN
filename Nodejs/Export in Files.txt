@@ -1,0 +1,150 @@
+
+module.exports
+
+require()
+a built-in function to include external modules that exist in seperate Files.
+
+module.exports 
+a special object
+
+//example 
+-------------------------------------
+math.js
+
+
+module.exports = 123;
+-------------------------------------
+script.js
+
+const someValue = require("./math")
+console.log(someValue)
+
+-----------------------------
+now open vscode terminal
+node script.js
+
+//output
+123
+
+
+//example 
+-------------------------------------
+math.js
+
+
+module.exports = "anybodyName";
+-------------------------------------
+script.js
+
+const someValue = require("./math")
+console.log(someValue)
+
+-----------------------------
+now open vscode terminal
+node script.js
+
+//output
+anybodyName
+
+
+//example (1st method)
+-------------------------------------
+math.js
+
+const sum = (a,b) => a+b;
+const mul = (a,b) => a*b;
+const g = 9.8;
+const pie = 3.14;
+
+let obj = {
+    sum:sum,
+    mul:mul,
+    g:g,
+    pie:pie
+}
+module.exports = obj;
+-------------------------------------
+script.js
+
+const math = require("./math")
+console.log(math.sum(2,3))
+console.log(math.mul(2,3))
+console.log(math.g)
+console.log(math.pie)
+
+-----------------------------
+now open vscode terminal
+node script.js
+
+//output
+5
+6
+9.8
+3.14
+
+
+
+//example (2nd method)
+-------------------------------------
+math.js
+
+const sum = (a,b) => a+b;
+const mul = (a,b) => a*b;
+const g = 9.8;
+const pie = 3.14;
+
+module.exports = {
+    sum:sum,
+    mul:mul,
+    g:g,
+    pie:pie
+}
+-------------------------------------
+script.js
+
+const math = require("./math")
+console.log(math.sum(2,3))
+console.log(math.mul(2,3))
+console.log(math.g)
+console.log(math.pie)
+
+-----------------------------
+now open vscode terminal
+node script.js
+
+//output
+5
+6
+9.8
+3.14
+
+
+
+//example (3rd method)
+-------------------------------------
+math.js
+
+module.exports.sum = (a,b) => a+b;
+module.exports.mul = (a,b) => a*b;
+module.exports.g = 9.8;
+module.exports.pie = 3.14;
+
+-------------------------------------
+script.js
+
+const math = require("./math")
+console.log(math.sum(2,3))
+console.log(math.mul(2,3))
+console.log(math.g)
+console.log(math.pie)
+
+-----------------------------
+now open vscode terminal
+node script.js
+
+//output
+5
+6
+9.8
+3.14
+
