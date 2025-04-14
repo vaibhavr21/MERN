@@ -1,0 +1,39 @@
+
+
+open vscode create script.js
+in script.js
+const info = require("./Fruits")
+console.log(info);
+console.log(info[0]);
+console.log(info[0].name);
+console.log(info[1].color);
+
+
+
+and make a folder named Fuits and in that folder create apple.js, banana.js and orange.js
+in apple.js 
+module.exports = {
+    name: "apple",
+    color:"red"
+}
+in banana.js
+module.exports = {
+    name:"banana",
+    color:"yellow"
+}
+in orange.js 
+module.exports = {
+    name:"orange",
+    color:"orange"
+}
+
+now open vscode terminal run node script.js 
+//output
+[
+  { name: 'apple', color: 'red' },
+  { name: 'banana', color: 'yellow' },
+  { name: 'orange', color: 'orange' }
+]
+{ name: 'apple', color: 'red' }
+apple
+yellow
