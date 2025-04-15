@@ -6,3 +6,35 @@ go to npmjs.com and find packages to install
 npm i figlet
 it is a package to convert a text using various Symbols like slash(/),underscore(-),less than(<), greater than(>),etc
 A string of text to turn into ASCII Art
+
+
+so lets understand with example 
+
+first create a folder named FigletDir
+open vscode terminal and go to FigletDir and type npm init -y 
+it will create a package.json file
+then npm install figlet
+it will install figlet dependencies and node_modules and update package.json file
+then in FigletDir create a file index.js 
+in index.js 
+
+var figlet = require("figlet");
+
+figlet("Hello Vaibhav", function (err, data) {
+  if (err) {
+    console.log("Something went wrong...");
+    console.dir(err);
+    return;
+  }
+  console.log(data);
+});
+
+
+to run this open vscode terminal go to FigletDir then type node index.js 
+//output
+ _   _      _ _        __     __    _ _     _
+ | | | | ___| | | ___   \ \   / /_ _(_) |__ | |__   __ ___   __
+ | |_| |/ _ \ | |/ _ \   \ \ / / _` | | '_ \| '_ \ / _` \ \ / /
+ |  _  |  __/ | | (_) |   \ V / (_| | | |_) | | | | (_| |\ V /
+ |_| |_|\___|_|_|\___/     \_/ \__,_|_|_.__/|_| |_|\__,_| \_/
+
