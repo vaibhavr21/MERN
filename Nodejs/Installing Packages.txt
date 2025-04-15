@@ -1,0 +1,8 @@
+node_modules  The node_modules folder contains every installed dependency for your project.
+package-lock.json  It records the exact version of every installed dependency, including its sub-dependencies and their versions.
+
+npm install <package name>
+go to npmjs.com and find packages to install
+npm i figlet
+it is a package to convert a text using various Symbols like slash(/),underscore(-),less than(<), greater than(>),etc
+A string of text to turn into ASCII Art
