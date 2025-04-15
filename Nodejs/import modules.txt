@@ -1,0 +1,28 @@
+import {sum} from "./math.js"
+
+we cant selectively load only the pieces we need with require but with import, we can selectively load only the pieces we need, which can save memory.
+
+Loading is synchronous for 'require' but can be asynchronous for "import"
+
+
+create math.js 
+in math.js 
+
+export const sum = (a,b) => a+b;
+export const mul = (a,b) => a*b;
+export const g = 9.8;
+export const pie = 3.14;
+
+
+create script.js
+
+import {sum , pie} from "./math.js"
+console.log(sum(2,3)); 
+console.log(pie);
+
+to run this open vscode and type
+node script.js 
+
+//output
+5
+3.14
