@@ -26,3 +26,22 @@ node script.js
 //output
 5
 3.14
+
+
+
+let understand with a example 
+create a folder named random-words 
+and in that npm init
+type:"module"
+npm install random-words
+create index.js
+in index.js
+
+import { generate } from "random-words";
+
+console.log(generate())
+
+to run this open vscode terminal and go to random-words folder and write node index.js 
+
+//output
+together
