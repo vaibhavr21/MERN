@@ -1,0 +1,12 @@
+
+The package.json file contains descriptive and functional metadata about a project, such as a name, version, and dependencies
+
+to create a package.json file type 
+npm init
+
+
+//packages Local vs global installation
+npm install <package name> //local installation
+
+npm install -g <package name> //global installation
+npm link <package name>
