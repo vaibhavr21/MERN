@@ -1,0 +1,110 @@
+
+38. Miscellaneous (33. JS OOPS)
+
+//GET & POST Requiest
+//GET 
+-used to GET some response
+-Data sent in query strings(limited, string data & visible in URL)
+
+//POST 
+-used to POST something (for Create/Write/Update)
+-Data sent via request body (any type of data)
+
+
+//for GET
+//create a folder backend and frontend 
+in fronted create a file index.html
+in index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>GET Request Form</h3>
+    <form method="get" action="http://localhost:8090/register">
+        <input type="text" placeholder="enter username" name="user">
+        <input type="password" placeholder="enter password" name="password">
+        <button type="submit">Submit</button>
+    </form>
+    <hr/>
+    <h3>POST Request Form</h3>
+    <form method="post" action="http://localhost:8090/register">
+        <input type="text" placeholder="enter username" name="user">
+        <input type="password" placeholder="enter password" name="password">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+and in backend 
+first npm init -y
+then create index.js
+npm install express
+in index.js
+
+const express = require('express');
+const app = express();
+const port = 8090;
+
+app.get("/register",(req, res)=>{
+    let {user, password} = req.query;
+    res.send(`standard GET response, Welcome ${user}`)
+})
+app.post("/register",(req, res)=>{
+    res.send("Standard POST response")
+})
+
+app.listen(port,()=>{
+    console.log(`server is running on port ${port}`)
+})
+
+//after running node index.js
+//output 
+standard GET response, Welcome vkm
+
+
+//now for POST
+handling POST requests
+Set up POST request to get some response
+Parse POST request data
+
+while we posting data and trying to console that data through req.body
+but we get undefined because express not understanding that data to convert in readable format use the following code
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
+frontend/index.html is same 
+
+backend/index.js 
+const express = require('express');
+const app = express();
+const port = 8090;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.get("/register",(req, res)=>{
+    let {user, password} = req.query;
+    res.send(`standard GET response, Welcome ${user}`)
+})
+app.post("/register",(req, res)=>{
+    // console.log(req.body)
+    let {user, password} = req.body;
+    console.log(user)
+    res.send(`Standard POST response, Welcome ${user}`)
+})
+
+app.listen(port,()=>{
+    console.log(`server is running on port ${port}`)
+})
+
+now express is reading POST data 
+
+//after running node index.js
+//output 
+standard POST response, Welcome vkm
